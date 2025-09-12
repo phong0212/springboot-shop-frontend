@@ -379,6 +379,7 @@ const Home = () => {
                                                                     alt={product.productName}
                                                                 />
 
+
                                                             </a>
                                                         </div>
                                                         <div className="product-l__info-wrap">
