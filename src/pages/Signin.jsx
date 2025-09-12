@@ -8,35 +8,24 @@ const Signin = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await api.post("/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
+  try {
+    const response = await api.post("/auth/login", { username, password });
 
-      if (!response.ok) {
-        throw new Error("Login failed");
-      }
+    const data = response.data; 
+    // data = { token, username, role, id }
 
-      const data = await response.json();
-      // data = { token, username, role }
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("username", data.username);
+    localStorage.setItem("role", data.role);
+    localStorage.setItem("userId", data.id);
 
-      // Lưu token + thông tin user
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("username", data.username);
-      localStorage.setItem("role", data.role);
-      localStorage.setItem("userId", data.id);
-      // Chuyển hướng về home
-      navigate("/");
-    } catch (err) {
-      setError("Invalid username or password");
-    }
-  };
+    navigate("/");
+  } catch (err) {
+    setError("Invalid username or password");
+  }
+};
 
   return (
     <div className="app-content">
