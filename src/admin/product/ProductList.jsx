@@ -94,10 +94,13 @@ function ProductList() {
                             <td>{prod.productName}</td>
                             <td style={{ width: 150, height: 150 }}>
                                 <img
-                                    src={prod.mainImage}
+                                    src={prod.mainImage?.trim()
+                                        ? `${process.env.REACT_APP_IMAGE_URL}/images/${prod.mainImage.trim()}`
+                                        : "/fallback-image.png"}
                                     alt={prod.productName}
                                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                                 />
+
                             </td>
                             <td>{prod.productPrice.toLocaleString()} ₫</td>
                             <td>{prod.categoryName}</td>

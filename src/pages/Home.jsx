@@ -189,7 +189,7 @@ const Home = () => {
                             <div className="row">
                                 {newArrivals.map(item => (
                                     <div key={item.id} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">
-                                            {console.log("Related item image:", item.productImage)}
+                                        {console.log("Related item image:", item.productImage)}
 
                                         <div className="product-o product-o--hover-on u-h-100">
                                             <div className="product-o__wrap">
@@ -289,7 +289,13 @@ const Home = () => {
                                         <div className="product-o product-o--hover-on u-h-100">
                                             <div className="product-o__wrap">
                                                 <a className="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-                                                    <img className="aspect__img" src={item.productImage} alt={item.productName} />
+                                                    <img
+                                                        className="aspect__img"
+                                                        src={item.productImage?.trim()
+                                                            ? `${process.env.REACT_APP_IMAGE_URL}/images/${item.productImage.trim()}`
+                                                            : "/fallback-image.png"}
+                                                        alt={item.productName}
+                                                    />
                                                 </a>
                                                 <div className="product-o__action-wrap">
                                                     <ul className="product-o__action-list">
@@ -367,9 +373,12 @@ const Home = () => {
                                                             >
                                                                 <img
                                                                     className="aspect__img"
-                                                                    src={product.productImage}
+                                                                    src={product.productImage?.trim()
+                                                                        ? `${process.env.REACT_APP_IMAGE_URL}/images/${product.productImage.trim()}`
+                                                                        : "/fallback-image.png"}
                                                                     alt={product.productName}
                                                                 />
+
                                                             </a>
                                                         </div>
                                                         <div className="product-l__info-wrap">
@@ -407,9 +416,12 @@ const Home = () => {
                                                             >
                                                                 <img
                                                                     className="aspect__img"
-                                                                    src={product.productImage}
+                                                                    src={product.productImage?.trim()
+                                                                        ? `${process.env.REACT_APP_IMAGE_URL}/images/${product.productImage.trim()}`
+                                                                        : "/fallback-image.png"}
                                                                     alt={product.productName}
                                                                 />
+
                                                             </a>
                                                         </div>
                                                         <div className="product-l__info-wrap">
@@ -447,9 +459,12 @@ const Home = () => {
                                                             >
                                                                 <img
                                                                     className="aspect__img"
-                                                                    src={product.productImage}
+                                                                    src={product.productImage?.trim()
+                                                                        ? `${process.env.REACT_APP_IMAGE_URL}/images/${product.productImage.trim()}`
+                                                                        : "/fallback-image.png"}
                                                                     alt={product.productName}
                                                                 />
+
                                                             </a>
                                                         </div>
                                                         <div className="product-l__info-wrap">
@@ -533,7 +548,13 @@ const Home = () => {
                                         <div className="bp-mini bp-mini--img u-h-100">
                                             <div className="bp-mini__thumbnail">
                                                 <a className="aspect aspect--bg-grey aspect--1366-768 u-d-block" href={`/blogs/${blog.blogId}`}>
-                                                    <img className="aspect__img" src={`http://localhost:8080${blog.imageUrl}`} alt={blog.title} />
+                                                    <img
+                                                        className="aspect__img"
+                                                        src={blog.imageUrl?.trim()
+                                                            ? `${process.env.REACT_APP_IMAGE_URL}${blog.imageUrl.trim()}`
+                                                            : "/fallback-image.png"}
+                                                        alt={blog.title}
+                                                    />
                                                 </a>
                                             </div>
                                             <div className="bp-mini__content">
