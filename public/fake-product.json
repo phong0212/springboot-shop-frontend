@@ -1,0 +1,39 @@
+{
+  "product_id": 1,
+  "product_name": "Áo thun thể thao",
+  "product_desc": "Chất liệu cotton co giãn, thoáng mát, phù hợp luyện tập.",
+  "product_price": 250000,
+  "product_image": "/images/men/shirt1.png",
+  "product_status": 1,
+  "category_name": "Áo",
+  "brand_name": "Nike",
+  "variants": [
+    {
+      "variant_id": 1,
+      "color": "Đỏ",
+      "size": "M",
+      "quantity": 10,
+      "image_url": "/images/men/shirt2.png",
+      "price": 250000,
+      "status": 1
+    },
+    {
+      "variant_id": 2,
+      "color": "Xanh",
+      "size": "L",
+      "quantity": 5,
+      "image_url": "/images/men/shirt3.png",
+      "price": 260000,
+      "status": 1
+    },
+    {
+      "variant_id": 3,
+      "color": "Đen",
+      "size": "XL",
+      "quantity": 0,
+      "image_url":"/images/men/shirt4.png",
+      "price": 255000,
+      "status": 0
+    }
+  ]
+}

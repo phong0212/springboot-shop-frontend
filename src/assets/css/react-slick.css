@@ -1,0 +1,13 @@
+.slider-main img {
+  border-radius: 8px;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.slider-thumb img {
+  border: 2px solid transparent;
+}
+
+.slider-thumb .slick-current img {
+  border-color: #ff6600; /* màu viền highlight ảnh đang chọn */
+}
