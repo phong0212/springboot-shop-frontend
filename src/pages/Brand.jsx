@@ -386,7 +386,9 @@ const Brand = () => {
                                                         >
                                                             <img
                                                                 className="aspect__img"
-                                                                src={product.productImage}
+                                                                src={product.productImage?.startsWith("http")
+                                                                    ? product.productImage               // đã là full URL
+                                                                    : `${process.env.REACT_APP_IMAGE_URL}/images/${product.productImage}`} // ghép baseUrl
                                                                 alt={product.productName}
                                                             />
                                                         </a>

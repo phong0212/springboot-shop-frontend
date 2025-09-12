@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import api from "../api/axios";
@@ -30,7 +30,7 @@ const Category = () => {
 
                                 <span>BỘ LỌC</span></h1>
                             <div className="shop-w-master__sidebar">
-                                
+
                                 <div className="u-s-m-b-30">
                                     <div className="shop-w shop-w--style">
                                         <div className="shop-w__intro-wrap">
@@ -369,7 +369,7 @@ const Category = () => {
                                     </form>
                                 </div>
                             </div>
-                             <div className="shop-p__collection">
+                            <div className="shop-p__collection">
                                 <div className="row is-grid-active">
                                     {products.length > 0 ? (
                                         products.map((product) => (
@@ -382,7 +382,9 @@ const Category = () => {
                                                         >
                                                             <img
                                                                 className="aspect__img"
-                                                                src={product.productImage}
+                                                                src={product.productImage?.startsWith("http")
+                                                                    ? product.productImage               // đã là full URL
+                                                                    : `${process.env.REACT_APP_IMAGE_URL}/images/${product.productImage}`} // ghép baseUrl
                                                                 alt={product.productName}
                                                             />
                                                         </a>
