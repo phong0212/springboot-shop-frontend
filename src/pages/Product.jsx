@@ -372,7 +372,13 @@ const Product = () => {
                                             <div className="product-m">
                                                 <div className="product-m__thumb">
                                                     <a className="aspect aspect--bg-grey aspect--square u-d-block" href={`/product/${product.id}`}>
-                                                        <img className="aspect__img" src={product.productImage} alt={product.productName} />
+                                                        <img
+                                                            className="aspect__img"
+                                                            src={product.productImage?.startsWith("http")
+                                                                ? product.productImage
+                                                                : `${process.env.REACT_APP_IMAGE_URL}/images/${product.productImage}`}
+                                                            alt={product.productName}
+                                                        />
                                                     </a>
                                                     <div className="product-m__quick-look">
                                                         <a className="fas fa-search" data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick Look"></a>

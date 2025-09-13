@@ -136,7 +136,7 @@ const Home = () => {
                                                     <div className="product-o product-o--hover-on product-o--radius">
                                                         <div className="product-o__wrap">
                                                             <a className="aspect aspect--bg-grey aspect--square u-d-block" href={`/product/${product.id}`}>
-                                                                <img
+                                                                <img className="aspect__img"
                                                                     src={product.productImage?.trim()
                                                                         ? `${process.env.REACT_APP_IMAGE_URL}/images/${product.productImage.trim()}`
                                                                         : "/fallback-image.png"}
