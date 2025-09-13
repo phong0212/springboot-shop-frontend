@@ -198,11 +198,12 @@ const Home = () => {
                                                         className="aspect__img"
                                                         src={
                                                             item.productImage && item.productImage.trim()
-                                                                ? `${process.env.REACT_APP_IMAGE_URL}/images/${item.productImage.trim()}`
+                                                                ? item.productImage // BE đã trả sẵn URL đầy đủ
                                                                 : "/fallback-image.png"
                                                         }
                                                         alt={item.productName || ""}
                                                     />
+
 
 
                                                 </a>
@@ -291,11 +292,14 @@ const Home = () => {
                                                 <a className="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
                                                     <img
                                                         className="aspect__img"
-                                                        src={item.productImage?.trim()
-                                                            ? `${process.env.REACT_APP_IMAGE_URL}/images/${item.productImage.trim()}`
-                                                            : "/fallback-image.png"}
-                                                        alt={item.productName}
+                                                        src={
+                                                            item.productImage && item.productImage.trim()
+                                                                ? item.productImage // BE đã trả sẵn URL đầy đủ
+                                                                : "/fallback-image.png"
+                                                        }
+                                                        alt={item.productName || ""}
                                                     />
+
                                                 </a>
                                                 <div className="product-o__action-wrap">
                                                     <ul className="product-o__action-list">
